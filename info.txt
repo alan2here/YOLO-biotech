@@ -1,0 +1,11 @@
+YOLO network project with Salavat
+
+requirements: Salavat
+coders: Alan
+
+classify/detect and locate
+  lab equipment
+  ill cells
+
+long term goals
+  classify/detect lab/employee failures
