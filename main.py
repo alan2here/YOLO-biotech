@@ -1,26 +1,16 @@
 from ultralytics import YOLO
 
-# pip install ultralytics
-# to do so "pip install torch" or "pip install torch==1.8.0", doesn't work, pip cannot find torch at all
+model = YOLO('yolov8n.pt') # load pretrained YOLO model
+# model = YOLO('yolov8n.yaml') # create new YOLO model
+# results = model.train(data='coco128.yaml', epochs=3) # train model with default YOLO dataset
 
 # ---
 
-# Load a pretrained YOLO model
-model = YOLO('yolov8n.pt')
+# results = model.train(data='our_training_data.yaml', epochs=3) # train model with our lab equipment dataset
 
-# Create a new YOLO model from scratch
-# model = YOLO('yolov8n.yaml')
-
-# Train a model using a dataset
-results = model.train(data='coco128.yaml', epochs=3)
-
-# Perform object detection on an image using a model
-results = model('https://ultralytics.com/images/bus.jpg')
+results = model('https://ultralytics.com/images/bus.jpg') # detect objects in image, output info to console
 
 # ---
 
-# Evaluate a model's performance on a validation set
-# results = model.val()
-
-# Export a model to ONNX format
-# success = model.export(format='onnx')
+# results = model.val() # evaluate performance on validation set
+# success = model.export(format='onnx') # export to ONNX format
